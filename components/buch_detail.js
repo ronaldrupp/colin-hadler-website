@@ -2,8 +2,22 @@ import styled from "styled-components";
 import { RichText } from "prismic-reactjs";
 import dayjs from "dayjs";
 import Link from "next/link";
+import ShareIcon from "./../public/share.svg";
 
 export default function Buch_Detail({ data }) {
+  console.log(data);
+  function handleShare() {
+    if (navigator.share) {
+      navigator
+        .share({
+          title: "web.dev",
+          text: "Check out web.dev.",
+          url: "https://web.dev/",
+        })
+        .then(() => console.log("Successful share"))
+        .catch((error) => console.log("Error sharing", error));
+    }
+  }
   return (
     <>
       <Container>
@@ -15,7 +29,15 @@ export default function Buch_Detail({ data }) {
         <Header>
           <Cover src={data.primary.buch.cover.url} />
           <Infos>
-            {RichText.render(data.primary.buch.titel)}
+            <TitleContainer>
+              <TitleLeftSection>
+                <NewIndicator>Neu</NewIndicator>
+                {RichText.render(data.primary.buch.titel)}
+              </TitleLeftSection>
+              <ShareBtn onClick={handleShare}>
+                <ShareIcon />
+              </ShareBtn>
+            </TitleContainer>
             {dayjs(data.primary.buch.erscheinungsdatum).format("YYYY")}
             <MerchantsContainer>
               {data.primary.buch.listoflinks &&
@@ -47,6 +69,39 @@ export default function Buch_Detail({ data }) {
   );
 }
 
+const ShareBtn = styled.button`
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const TitleContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h1 {
+    margin: 0;
+  }
+  div {
+  }
+`;
+
+const TitleLeftSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+`;
+const NewIndicator = styled.div`
+  color: var(--orange);
+  border: 1px solid var(--orange);
+  text-transform: uppercase;
+  padding: 0.5em;
+  border-radius: var(--border-radius);
+  font-size: 0.75rem;
+`;
 const BackLinkA = styled.a`
   display: flex;
   justify-content: flex-start;
@@ -129,12 +184,16 @@ const Cover = styled.img`
 `;
 
 const Infos = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   @media screen and (max-width: 768px) {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
-    text-align: center;
+    margin-top: 2em;
   }
 `;
 

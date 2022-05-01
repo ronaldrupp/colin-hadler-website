@@ -48,7 +48,7 @@ export default function TerminList({ data }) {
             <EventDate>
               {dayjs(event.datum___uhrzeit)
                 .locale("de")
-                .format("DD. MMM YYYY, HH:mm")}{" "}
+                .format("dd., DD. MMM YYYY, HH:mm")}{" "}
               Uhr
             </EventDate>
             <EventLocation>{RichText.render(event.ort)}</EventLocation>
@@ -101,7 +101,7 @@ function Overlay({ event, closeModal }) {
           <EventDate>
             {dayjs(event.datum___uhrzeit)
               .locale("de")
-              .format("DD. MMM YYYY, HH:mm")}{" "}
+              .format("dddd, DD. MMMM YYYY, HH:mm")}{" "}
             Uhr
           </EventDate>
           <EventLocation>{RichText.render(event.ort)}</EventLocation>
@@ -259,7 +259,7 @@ const EventDate = styled.div`
     } */
   /* } */
   color: gray;
-  margin-top: 1em;
+  margin-top: 0.5em;
 `;
 const EventTitle = styled.p`
   font-weight: 800;
