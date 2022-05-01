@@ -10,7 +10,7 @@ export default function Buch_Detail({ data }) {
     if (navigator.share) {
       navigator
         .share({
-          title: "web.dev",
+          title: "colinhadler.at",
           text: "Check out web.dev.",
           url: "https://web.dev/",
         })
