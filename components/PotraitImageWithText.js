@@ -30,6 +30,7 @@ const Image = styled.img`
   width: 100%;
   grid-column: ${(params) => (params.leftRight ? "6 / 12" : "4 / 9")};
   grid-row: 1/13;
+  border-radius: var(--border-radius);
   @media screen and (max-width: 768px) {
     grid-column: ${(params) => (params.leftRight ? "6 / 13" : "1 / 10")};
     grid-row: 1/12;
@@ -51,6 +52,7 @@ const Description = styled.div`
   grid-column: ${(params) => (!params.leftRight ? "7 / 12" : "2 / 7")};
   grid-row: 2 / 5;
   padding: 3rem;
+  border-radius: var(--border-radius);
   p {
     margin: 0;
   }

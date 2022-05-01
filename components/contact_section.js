@@ -52,7 +52,7 @@ const ExternalLink = styled.a`
   color: white;
   background-color: black;
   padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   display: flex;
   justify-content: center;
   align-items: center;

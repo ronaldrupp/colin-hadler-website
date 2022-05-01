@@ -76,7 +76,7 @@ const InnerContainer = styled(motion.div)`
   bottom: 0;
   right: 0;
   margin: 2rem;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   border: 1px solid gray;
   z-index: 999;
   @media screen and (max-width: 600px) {
@@ -102,9 +102,8 @@ const Button = styled.button`
   background-color: ${({ rejectStyle }) =>
     rejectStyle ? "transparent" : "var(--primary-color)"};
   padding: 1rem;
-  border-radius: 0.25rem;
-  color: ${({ rejectStyle }) =>
-    rejectStyle ? "black" : "white"};
+  border-radius: var(--border-radius);
+  color: ${({ rejectStyle }) => (rejectStyle ? "black" : "white")};
   font-weight: 700;
   width: 100%;
   &:hover {

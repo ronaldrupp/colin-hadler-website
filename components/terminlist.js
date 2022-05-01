@@ -273,7 +273,7 @@ const EventItem = styled.article`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   width: 100%;
   background-color: black;
   color: white;

@@ -49,7 +49,7 @@ const VideoLink = styled.a`
   background-color: black;
   color: white;
   font-size: 1rem;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -63,7 +63,7 @@ const VideoLink = styled.a`
     height: 100%;
   }
   img {
-    border-radius: 0.25rem 0.25rem 0 0;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
   }
   transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1),
     -webkit-transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);

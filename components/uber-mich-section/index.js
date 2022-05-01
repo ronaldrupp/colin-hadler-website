@@ -169,6 +169,7 @@ const Container = styled.div`
 const InnerContainer = styled.div`
   width: 100%;
   height: 450px;
+  border-radius: var(--border-radius);
   max-width: 900px;
   margin: 5rem auto;
   display: flex;

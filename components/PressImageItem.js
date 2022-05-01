@@ -72,7 +72,7 @@ const SubtitleContainer = styled.div`
 const ResolutionIndicator = styled.span`
   border: 0.85px solid gray;
   padding: 0.25rem;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   font-size: 0.75rem;
   color: gray;
   font-family: "Rajdhani", sans-serif;
@@ -101,7 +101,7 @@ const StyledImage = styled(Image)`
   aspect-ratio: 1/1;
   object-fit: cover;
   background-color: rgb(220, 220, 220);
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
 `;
 
 const ImageItem = styled.div`
@@ -111,7 +111,7 @@ const ImageItem = styled.div`
   justify-content: space-between;
   border: 1px solid rgb(200, 200, 200);
   padding: 1rem;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   @media screen and (max-width: 768px) {
     padding: 0.5rem;
   }
@@ -131,7 +131,7 @@ const DownloadBtn = styled.button`
   border: 0;
   width: 100%;
   padding: 1rem;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   color: white;
   font-weight: 600;
   margin-top: 1rem;

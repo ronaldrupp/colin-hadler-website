@@ -71,7 +71,7 @@ const ExternalLink = styled.a`
   padding: 2rem;
   color: white;
   font-size: 1rem;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   flex-grow: 1;
   .exLinkSVG {
     width: 50px;

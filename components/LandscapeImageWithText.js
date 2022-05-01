@@ -24,6 +24,7 @@ const Image = styled.img`
   grid-column: 1 / 11;
   grid-row: 1 / 6;
   object-fit: cover;
+  border-radius: var(--border-radius);
   @media screen and (max-width: 768px) {
     grid-column: 1/13;
     grid-row: 1 / 12;
@@ -37,7 +38,7 @@ const Description = styled.div`
   grid-column: 6 / 13;
   padding: 3rem;
   grid-row: 6;
-
+  border-radius: var(--border-radius);
   @media screen and (max-width: 768px) {
     font-size: 1rem;
     padding: 2rem;
