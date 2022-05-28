@@ -78,6 +78,14 @@ export const getStaticProps = async (req, ctx) => {
                     hintergrundbild
                     kurzbeschreibung
                     cover
+                    linklabel
+                    link {
+                      ... on _Document {
+                        _meta {
+                          uid
+                        }
+                      }
+                    }
                   }
                 }
                 ... on HomepageBodyUberMich_section {

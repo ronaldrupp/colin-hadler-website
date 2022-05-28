@@ -24,8 +24,9 @@ export default function Navigation({ data }) {
       window.removeEventListener("scroll", navigationListener);
     };
   }, []);
-  
+
   useEffect(() => {
+    if (typeof window === "undefined") return;
     if (showMobileContainer) {
       document
         .querySelector('meta[name="theme-color"]')
@@ -213,14 +214,25 @@ const LinkItem = styled.a`
 `;
 
 const Container = styled.nav`
-  position: fixed;
+  .isScrollingDown {
+    transform: translateY(-100%);
+  }
+  .isHavingHeader{
+    position: absolute;
+    top: 0;
+  }
+  /* + main > section.needsTransparentNav & {
+    background-color: hotpink;
+  } */
+  background: transparent;
   width: 100%;
-  height: ${(props) => (props.windowScroll.y > 60 ? "75px" : "150px")};
-  border-bottom: ${(props) =>
+  height: 120px;
+  /* border-bottom: ${(props) =>
     props.windowScroll.y > 60 && !props.mobileContainer
       ? "1px solid rgba(200,200,200,0.6)"
-      : "none"};
-  top: 0;
+      : "none"}; */
+  border-bottom: ${(props) =>
+    props.windowScroll.y > 60 ? "1px solid rgba(200, 200, 200, 0.6)" : "none"};
   z-index: 999;
   transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1),
     -webkit-transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
@@ -228,7 +240,7 @@ const Container = styled.nav`
     (props.windowScroll.y < 60 && props.index === "/") || props.mobileContainer
       ? "invert(1)"
       : "invert(0)"}; */
-  background-color: ${(props) => {
+  /* background-color: ${(props) => {
     if (props.windowScroll.y > 60 && !props.mobileContainer) {
       return "rgba(255,255,255,1)";
     } else if (props.mobileContainer) {
@@ -236,7 +248,7 @@ const Container = styled.nav`
     } else {
       return "transparent";
     }
-  }};
+  }}; */
   /* backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px); */
   @media screen and (max-width: 768px) {

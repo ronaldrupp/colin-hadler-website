@@ -7,5 +7,9 @@ module.exports = {
 
     return config;
   },
+  i18n: {
+    locales: ["de-AT"],
+    defaultLocale: "de-AT",
+  },
   images: { domains: ["images.prismic.io", "colinhadler.cdn.prismic.io"] },
 };

@@ -19,11 +19,13 @@ import PotraitImageWithText from "../components/PotraitImageWithText";
 import LandscapeImageWithText from "../components/LandscapeImageWithText";
 import ContactSection from "../components/contact_section";
 import ExternalLinksGrid from "../components/ExternalLinksGrid";
+import BuchHero from "../components/hero__1_v2";
 
 export default function SliceResolver({ slice, data }) {
   switch (data.__typename) {
     case "HomepageBodyHero__1":
-      return <Hero__1 data={data} />;
+      // return <Hero__1 data={data} />;
+      return <BuchHero slice={data} />;
     case "HomepageBodyUberMich_section":
       return <UberMichSection data={data} />;
     case "HomepageBodyMeineBucher_section":
